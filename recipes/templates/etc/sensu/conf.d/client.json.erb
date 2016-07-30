@@ -1,7 +1,7 @@
 {
   "client": {
     "name": "<%= node['hostname'] %>",
-    "address": "127.0.0.1",
+    "address": "<%= node['ipaddress'] %>",
     "subscriptions": [<%= node['sensu']['subscriptions'].map { |s| "\"#{s}\"" }.join(', ') %>],
     "tags": {
       "hostname": "<%= node[:hostname]%>"
