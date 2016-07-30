@@ -2,19 +2,22 @@
   "client": {
     "name": "<%= node['hostname'] %>",
     "address": "127.0.0.1",
-    "subscriptions": [<%= node['sensu']['subscriptions'].map { |s| "\"#{s}\"" }.join(', ') %>]
-  },
-  "tags": {
-    "hostname": "<%= node[:hostname]%>"
-  },
-  "keepalive": {
-    "thresholds": {
-      "warning": 60,
-      "critical": 60
+    "subscriptions": [<%= node['sensu']['subscriptions'].map { |s| "\"#{s}\"" }.join(', ') %>],
+    "tags": {
+      "hostname": "<%= node[:hostname]%>"
     },
-    "handlers": [],
-    "interval": 20,
-    "occurrences": 3,
-    "refresh": 300
+    "keepalive": {
+      "thresholds": {
+        "warning": 60,
+        "critical": 60
+      },
+      "handlers": [
+        "mailer",
+        "slack"
+      ],
+      "interval": 20,
+      "occurrences": 3,
+      "refresh": 300
+    }
   }
 }
