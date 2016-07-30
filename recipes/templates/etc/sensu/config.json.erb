@@ -1,0 +1,17 @@
+{
+  "rabbitmq": {
+    "host": "<%= node['sensu']['sensu_server'] %>",
+    "port": 5672,
+    "user": "sensu",
+    "password": "sensu",
+    "vhost": "/sensu"
+  },
+  "redis": {
+    "host": "<%= node['sensu']['sensu_server'] %>",
+    "port": 6379
+  },
+  "api": {
+    "host": "<%= node['sensu']['sensu_server'] %>",
+    "port": 4567
+  }
+}
