@@ -1,0 +1,4 @@
+sensu:
+  sensu_server: 192.168.0.123
+  subscriptions:
+    - all
