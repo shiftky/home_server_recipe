@@ -1,4 +1,4 @@
-# Home Server Recipe
+# Sensu Recipe
 
 ## How to provisioning
 
